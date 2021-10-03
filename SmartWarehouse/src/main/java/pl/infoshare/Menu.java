@@ -9,11 +9,14 @@ public class Menu {
     private ArrayList<String> menuOptions = new ArrayList<>();
 
     public void run() {
+        menuOptions = fillMenuOptions();
         displayMenu();
-        getMenuNumber();
+        int number = getMenuNumber();
+        enterIntoMenuOptions(number);
+
     }
 
-    public ArrayList<String> fillMenuOptions() {
+    private final ArrayList<String> fillMenuOptions() {
 
         menuOptions.add("0. Wyjście z programu");
         menuOptions.add("1. Sprawdz stan magazynu ");
@@ -25,23 +28,20 @@ public class Menu {
         return menuOptions;
     }
 
-    public void displayMenu() {
+    private void displayMenu() {
 
 //        1.text menu : - na bazie listy
         System.out.println("======================");
 
-        menuOptions = fillMenuOptions();
-
         for (String i : menuOptions) {
             System.out.println(i);
-
         }
 
         System.out.println("======================");
 
     }
 
-    public int getMenuNumber() {
+    private int getMenuNumber() {
 
 //        2. Pobieranie nr menu
         int result = 0;
@@ -59,5 +59,39 @@ public class Menu {
         }
 
         return result;
+    }
+
+    private void enterIntoMenuOptions(int source){
+
+        switch (source){
+            case 0:
+                System.out.println("Zamykam program");
+                break;
+            case 1:
+//                KlasaJakasTam;
+                System.out.println("Sprawdzam stan magazynu...");
+                returnToMenu();
+                break;
+            case 2:
+//                KlasaJakasTam2;
+                System.out.println("Przechodzę do dodawania produktu...");
+                returnToMenu();
+                break;
+            case 3:
+//                KlasaJakasTam3;
+                System.out.println("Usuwam produkt...");
+                returnToMenu();
+                break;
+            case 4:
+//                KlasaJakasTam4;
+                System.out.println("Wzywam sztaplare");
+                returnToMenu();
+                break;
+        }
+    }
+
+    private void returnToMenu() {
+        displayMenu();
+        enterIntoMenuOptions(getMenuNumber());
     }
 }
