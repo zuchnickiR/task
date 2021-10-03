@@ -66,28 +66,26 @@ public class Menu {
         switch (source){
             case 0:
                 System.out.println("Zamykam program");
-                break;
+                return;
             case 1:
 //                KlasaJakasTam;
                 System.out.println("Sprawdzam stan magazynu...");
-                returnToMenu();
                 break;
             case 2:
 //                KlasaJakasTam2;
                 System.out.println("Przechodzę do dodawania produktu...");
-                returnToMenu();
                 break;
             case 3:
 //                KlasaJakasTam3;
                 System.out.println("Usuwam produkt...");
-                returnToMenu();
                 break;
             case 4:
 //                KlasaJakasTam4;
                 System.out.println("Wzywam sztaplare");
-                returnToMenu();
                 break;
+
         }
+        returnToMenu();
     }
 
     private void returnToMenu() {
