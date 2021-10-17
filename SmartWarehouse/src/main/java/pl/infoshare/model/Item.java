@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 
 public class Item extends ItemComponent{
     private int id;
-    private int itemCode;
+    private int itemCode; //producer serial number
     private String name;
     private Category category;
     private Producer producer;
