@@ -1,5 +1,7 @@
 package pl.infoshare;
 
+import pl.infoshare.service.AddItemService;
+
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -72,8 +74,8 @@ public class Menu {
                 System.out.println("Sprawdzam stan magazynu...");
                 break;
             case 2:
-//                KlasaJakasTam2;
                 System.out.println("Przechodzę do dodawania produktu...");
+                new AddItemService().addItem();
                 break;
             case 3:
 //                KlasaJakasTam3;
