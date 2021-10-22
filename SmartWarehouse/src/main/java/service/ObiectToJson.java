@@ -10,16 +10,8 @@ import java.util.Scanner;
 
 public class ObiectToJson {
 
-//TA METODA SPEŁNIA ZAŁOŻENIA TASKU
     public void createJSONObjectOK(Object object) {
-        /*
-        Jackson API dostarczan nam ObjectMapper by skonwertować Java Object into JSON and JSON into Java Object
-
-         */
-
-
         ObjectMapper objectMapper = new ObjectMapper();
-
         String projecDirectory = PathsClasses.getProjecDirectory();
         String simpleName = object.getClass().getSimpleName();
         String fileName = simpleName + " " + DataTime.getCurrentDate() + " " + DataTime.getCurrentTime();
@@ -37,7 +29,11 @@ public class ObiectToJson {
             try {
                 String valueAsString = objectMapper.writeValueAsString(object);
                 objectMapper.writeValue(
-                        new FileWriter(projecDirectory + simpleName + " " + DataTime.getCurrentDate() + " " + DataTime.getCurrentTime() + " .json"), valueAsString);
+                        new FileWriter(projecDirectory
+                                + simpleName + " "
+                                + DataTime.getCurrentDate() + " "
+                                + DataTime.getCurrentTime() +
+                                " .json"), valueAsString);
                 System.out.println("CREATE FILE: '" + fileName + "' IN PATH: " + projecDirectory);
             } catch (IOException e) {
                 e.printStackTrace();
