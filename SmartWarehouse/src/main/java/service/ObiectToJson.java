@@ -33,7 +33,7 @@ public class ObiectToJson {
                                 + simpleName + " "
                                 + DataTime.getCurrentDate() + " "
                                 + DataTime.getCurrentTime() +
-                                " .json"), valueAsString);
+                                ".json"), valueAsString);
                 System.out.println("CREATE FILE: '" + fileName + "' IN PATH: " + projecDirectory);
             } catch (IOException e) {
                 e.printStackTrace();
