@@ -27,13 +27,14 @@ public class ObiectToJson {
         String resultYn = scanner.nextLine();
         if (resultYn.equals("Y") || resultYn.equals("y")) {
             try {
-                String valueAsString = objectMapper.writeValueAsString(object);
-                objectMapper.writeValue(
+               // String valueAsString = objectMapper.writeValueAsString(object); MARIUSZ POPRAWKA
+                //dodałem .writerWithDefaultPrettyPrinter()
+                objectMapper.writerWithDefaultPrettyPrinter().writeValue(
                         new FileWriter(projecDirectory
                                 + simpleName + " "
                                 + DataTime.getCurrentDate() + " "
                                 + DataTime.getCurrentTime() +
-                                ".json"), valueAsString);
+                                ".json"), object);
                 System.out.println("CREATE FILE: '" + fileName + "' IN PATH: " + projecDirectory);
             } catch (IOException e) {
                 e.printStackTrace();
