@@ -31,9 +31,9 @@ public class ObiectToJson {
                 //dodałem .writerWithDefaultPrettyPrinter()
                 objectMapper.writerWithDefaultPrettyPrinter().writeValue(
                         new FileWriter(projecDirectory
-                                + simpleName + " "
-                                + DataTime.getCurrentDate() + " "
-                                + DataTime.getCurrentTime() +
+                                + simpleName +
+                               // + DataTime.getCurrentDate() + " "
+                               // + DataTime.getCurrentTime() +
                                 ".json"), object);
                 System.out.println("CREATE FILE: '" + fileName + "' IN PATH: " + projecDirectory);
             } catch (IOException e) {

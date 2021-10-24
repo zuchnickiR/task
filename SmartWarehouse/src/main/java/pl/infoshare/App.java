@@ -1,5 +1,7 @@
 package pl.infoshare;
 
+import pl.infoshare.service.AddItemService;
+
 import static pl.infoshare.service.AddItemService.addItem;
 import static pl.infoshare.utils.ConsoleInput.*;
 
@@ -16,6 +18,8 @@ public class App
        Menu menu = new Menu();
 
          menu.run();
+
+        AddItemService.addItem();
 
 
 

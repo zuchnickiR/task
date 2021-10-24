@@ -1,6 +1,7 @@
 package service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import pl.infoshare.model.User;
 
 public class MAinTest {
 
@@ -10,12 +11,13 @@ public class MAinTest {
         PersonTest personTest = new PersonTest("Rob001", 123456.998, 886);
 
 
-
-        ObiectToJson obiectToJson = new ObiectToJson();
-        obiectToJson.createJSONObjectOK(personTest);
-
+//        ObiectToJson obiectToJson = new ObiectToJson();
+//        obiectToJson.createJSONObjectOK(personTest);
+////
         JsonToObiect jsonToObiect = new JsonToObiect();
-        jsonToObiect.converteJsonFileToDomainObiect(PersonTest.class);
+        PersonTest personTest1 = jsonToObiect.converteJsonFileToDomainObiect(PersonTest.class, "PersonTest");
+
+
 
 
 

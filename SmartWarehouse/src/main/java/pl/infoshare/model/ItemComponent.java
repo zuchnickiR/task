@@ -22,7 +22,7 @@ import java.time.LocalDateTime;
 //        this.expirationDate = expirationDate;
 //        this.localization = localization;
 //    }
-public  class ItemComponent {
+public class ItemComponent {
       private String name;
       private String category;
       private String supplier;
