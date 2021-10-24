@@ -3,56 +3,60 @@ package pl.infoshare.utils;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import static java.text.ChoiceFormat.nextDouble;
+
 
 public class ConsoleInput {
 
-    public static String getInputUserString() {
-        boolean valid = false;
-        String result = "";
-        do{
-            try {
-                result = new Scanner(System.in).nextLine();
-                if(result.isEmpty() && result.isBlank()){
-                    valid = false;
+    private static final Scanner SCANNER = new Scanner(System.in);
+
+
+        public static String getInputUserString() {
+            boolean inputIsNotValid = true;
+            String input = "";
+            do{
+                try {
+                    input = new Scanner(System.in).nextLine();
+                    inputIsNotValid = input.trim().isEmpty();
+                } catch (InputMismatchException e) {
+                    System.out.println("Wrong input.");
+                    inputIsNotValid = true;
                 }
-            } catch (InputMismatchException e) {
-                System.out.println("Wrong input.");
-                valid = true;
-            }
-        }while (valid);
-        return result;
-    }
+            }while (inputIsNotValid);
+            return input;
+        }
 
     public static Double getInputUserDouble() {
-        boolean valid = false;
-         double result = 0;
+
+        boolean inputIsNotValid = true;
+        Double input = 0.0;
         do{
             try {
-                result = new Scanner(System.in).nextDouble();
-                System.out.println("result = " + result);
-
+                input = new Scanner(System.in).nextDouble();
+                inputIsNotValid = false;
+                
             } catch (InputMismatchException e) {
                 System.out.println("Wrong input.");
-                valid = true;
+                inputIsNotValid = true;
             }
-        }while (valid);
-        return result;
+        }while (inputIsNotValid);
+        return input;
     }
 
-  public static Integer getInputUserInteger() {
-        boolean valid = false;
-        int result = 0;
-       do{
-          try {
+        public static Integer getInputUserInteger() {
+            boolean inputIsNotValid = true;
+            int result = 0;
+            do{
+                try {
 
-              result = new Scanner(System.in).nextInt();
+                    result = new Scanner(System.in).nextInt();
+                    inputIsNotValid = false;
+                } catch (InputMismatchException e) {
+                    System.out.println("Wrong input.");
+                    inputIsNotValid = true;               }
+            } while (inputIsNotValid);
+            return result;
+        }
 
-           } catch (InputMismatchException e) {
-               System.out.println("Wrong input.");
-                valid = true;
-          }
-       } while (valid);
-       return result;
     }
 
-}
