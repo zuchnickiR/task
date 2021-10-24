@@ -1,5 +1,8 @@
 package pl.infoshare;
 
+import static pl.infoshare.service.AddItemService.addItem;
+import static pl.infoshare.utils.ConsoleInput.*;
+
 /**
  * Hello world!
  *
@@ -10,8 +13,13 @@ public class App
     {
         System.out.println( "Yellow Angels" );
 
-        Menu menu = new Menu();
-        menu.run();
+       Menu menu = new Menu();
+
+         menu.run();
+
+
+
+
 
     }
 }
