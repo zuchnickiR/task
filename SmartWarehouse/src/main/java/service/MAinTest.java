@@ -9,13 +9,18 @@ public class MAinTest {
 
 
         PersonTest personTest = new PersonTest("Rob001", 123456.998, 886);
+        PersonTest personTest1 = new PersonTest("Rob002", 45123456.998, 989);
+        PersonTest personTest2 = new PersonTest("Rob003", 87124653456.998, 4558);
 
+        //MAPUJE POJO NA JSON'A
+        ObiectToJson obiectToJson = new ObiectToJson();
+        obiectToJson.createJSONObjectOK(personTest2);
 
-//        ObiectToJson obiectToJson = new ObiectToJson();
-//        obiectToJson.createJSONObjectOK(personTest);
-////
+        //MAPUJĘ PLIK JSON NA POJO (+ WALIDACJA PODCZAS INPUTU)
         JsonToObiect jsonToObiect = new JsonToObiect();
-        PersonTest personTest1 = jsonToObiect.converteJsonFileToDomainObiect(PersonTest.class, "PersonTest");
+        jsonToObiect.converteJsonFileToDomainObiect(PersonTest.class, "16:21:17");
+
+
 
 
 
