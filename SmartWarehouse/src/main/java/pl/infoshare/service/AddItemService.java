@@ -12,7 +12,6 @@ import static pl.infoshare.utils.ConsoleInput.*;
 
 public class AddItemService {
 
-
        public static ItemComponent addItem() {
            ItemComponent item = new ItemComponent();
 
@@ -37,7 +36,6 @@ public class AddItemService {
 
         return item;
 
-
-   }
+       }
 
 }
