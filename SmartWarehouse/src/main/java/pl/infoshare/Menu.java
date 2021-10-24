@@ -1,7 +1,6 @@
 package pl.infoshare;
 
 import pl.infoshare.service.AddItemService;
-
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
