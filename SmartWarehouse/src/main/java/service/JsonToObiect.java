@@ -25,10 +25,10 @@ public class JsonToObiect {
            } catch (Exception e) {
            }
        } else {
-           System.out.println("\nPlik o takiej nazwie nie istnieje w katalogu: " + projectDirectory +"\n" +
+           System.out.println("\nA file with this name does not exist in the directory:: " + projectDirectory +"\n" +
                    "---------------------------------------------------------------------------------------------\n" +
-                   "a) Upewnij się, że podałeś prawidłową nazwę szukanego pliku\n" +
-                   "b) Upewnij się, że podałeś samą nazwę pliku, bez podania rozszeżenia .json\n" +
+                   "a) Make sure you entered the correct name of the file you are looking for\n" +
+                   "b) Make sure you have entered the file name only, without any .json extension\n" +
                    "---------------------------------------------------------------------------------------------");
        }
         return result;
@@ -43,13 +43,17 @@ public class JsonToObiect {
             JsonFactory factory = mapper.getFactory();
             JsonParser parser = factory.createParser(file);
             JsonNode jsonObj = mapper.readTree(parser);
-            System.out.println("TO JEST JSON: " + jsonObj.toString());
+
+            System.out.println("File correctness check: passed");
             ifJson = true;
         } catch (Exception ex) {
             ifJson = false;
         }
         return ifJson;
     }
+
+
+
 
 
 

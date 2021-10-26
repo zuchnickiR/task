@@ -31,7 +31,7 @@ public class ObiectToJson {
                         new FileWriter(projecDirectory
                                 + DataTime.getCurrentTime() + // Nazwą pliku będzie jak na razie czas zapisu, by generować "unikalne" nazwy
                                 ".json"), object);
-                System.out.println("CREATE FILE: '" + fileName + "' IN PATH: " + projecDirectory);
+                System.out.println("CREATE FILE: '" + DataTime.getCurrentTime() + "' IN PATH: " + projecDirectory);
             } catch (IOException e) {
                 e.printStackTrace();
             }
