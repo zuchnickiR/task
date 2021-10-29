@@ -19,18 +19,32 @@ public class JsonToObiect {
         I result = null;
         ObjectMapper objectMapper = new ObjectMapper();
         File file = new File(projectDirectory + nazwaPliku + ".json");
-       if(ifJson(file)) {
-           try {
-               result = objectMapper.readValue(file, cls);
-           } catch (Exception e) {
-           }
-       } else {
-           System.out.println("\nA file with this name does not exist in the directory:: " + projectDirectory +"\n" +
-                   "---------------------------------------------------------------------------------------------\n" +
-                   "a) Make sure you entered the correct name of the file you are looking for\n" +
-                   "b) Make sure you have entered the file name only, without any .json extension\n" +
-                   "---------------------------------------------------------------------------------------------");
-       }
+        try {
+            result = objectMapper.readValue(file, cls);
+        } catch (Exception e) {
+            System.out.println("\nAn error occured. Please follow the steps below:\n" +
+                    "---------------------------------------------------------------------------------------------\n" +
+                    "a) Make sure you entered the correct name of the file you are looking for\n" +
+                    "b) Make sure you have entered the file name only, without any .json extension\n" +
+                    "---------------------------------------------------------------------------------------------");
+        }
+        return result;
+    }
+
+
+    public <I> I converteJsonFileToDomainObiect111(Class<I> cls, String projectDirectory, String nazwaPliku) {
+        I result = null;
+        ObjectMapper objectMapper = new ObjectMapper();
+        File file = new File(projectDirectory + nazwaPliku + ".json");
+        try {
+            result = objectMapper.readValue(file, cls);
+        } catch (Exception e) {
+            System.out.println("\nAn error occured. Please follow the steps below:\n" +
+                    "---------------------------------------------------------------------------------------------\n" +
+                    "a) Make sure you entered the correct name of the file you are looking for\n" +
+                    "b) Make sure you have entered the file name only, without any .json extension\n" +
+                    "---------------------------------------------------------------------------------------------");
+        }
         return result;
     }
 
@@ -43,7 +57,6 @@ public class JsonToObiect {
             JsonFactory factory = mapper.getFactory();
             JsonParser parser = factory.createParser(file);
             JsonNode jsonObj = mapper.readTree(parser);
-
             System.out.println("File correctness check: passed");
             ifJson = true;
         } catch (Exception ex) {
@@ -51,11 +64,6 @@ public class JsonToObiect {
         }
         return ifJson;
     }
-
-
-
-
-
 
 
 }

@@ -10,18 +10,20 @@ public class MAinTest {
 
         PersonTest personTest = new PersonTest("Rob001", 123456.998, 886);
         PersonTest personTest1 = new PersonTest("Rob002", 45123456.998, 989);
-        PersonTest personTest2 = new PersonTest("Rob003", 87124653456.998, 4558);
+        PersonTest personTest2 = new PersonTest("ROBOT", 111.222, 500);
 
         //MAPUJE POJO NA JSON'A
-//        ObiectToJson obiectToJson = new ObiectToJson();
-//        obiectToJson.createJSONObjectOK(personTest2);
+        ObiectToJson obiectToJson = new ObiectToJson();
+      //  obiectToJson.createJSONObjectOK111(personTest2, "/home/rob/Desktop/YellowAngels1/SmartWarehouse/");
 
         //MAPUJĘ PLIK JSON NA POJO (+ WALIDACJA 'czy .json' PODCZAS INPUTU)
         JsonToObiect jsonToObiect = new JsonToObiect();
-        PersonTest personTest3 = jsonToObiect.converteJsonFileToDomainObiect(PersonTest.class, "18:54:22");
+        PersonTest personTest3 = jsonToObiect.converteJsonFileToDomainObiect111(PersonTest.class, "/home/rob/Desktop/YellowAngels1/SmartWarehouse/", "14:21:17");
         String name = personTest3.getName();
         System.out.println(name);
 
+
+//  /home/rob/Desktop/YellowAngels1/SmartWarehouse/19:10:36.json
 
     }
 
